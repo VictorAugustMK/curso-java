@@ -28,7 +28,7 @@ Uma IDE como IntelliJ IDEA, Eclipse ou VS Code configurada
 
 Clone o repositório:
 
-git clone https://github.com/seu-usuario/curso-java.git
+git clone https://github.com/VictorAugustMK/curso-java.git
 
 Navegue até a pasta do projeto:
 
