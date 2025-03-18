@@ -1,7 +1,6 @@
 package excetions.application;
 
 import excetions.model.entities.Reservetion;
-import jdk.jfr.DataAmount;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -25,8 +24,7 @@ public class Program {
 
         if (!checkOut.after(checkIn)) {
             System.out.println("Error in reservation: Check-out date must be after check-in date");
-        }
-        else {
+        } else {
             Reservetion reservetion = new Reservetion(number, checkIn, checkOut);
             System.out.println("Reservation: " + reservetion);
 
@@ -37,21 +35,15 @@ public class Program {
             System.out.print("Check-out date (dd/MM/yyyy): ");
             checkOut = sdf.parse(sc.next());
 
-            Date now = new Date();
-            if (checkIn.before(now) || checkOut.before(now)) {
-                System.out.println("Error in reservation: Check-out date for update must be future");
-            }
-            else  if (!checkOut.after(checkIn)) {
-                System.out.println("Error in reservation: Check-out date must be after check-in date");
-            }
-            else {
-                reservetion.updateDates(checkIn, checkOut);
+            String error = reservetion.updateDates(checkIn, checkOut);
+            if (error != null) {
+                System.out.println("Error in reservation: " + error);
+            } else {
                 System.out.println("Reservation: " + reservetion);
             }
+
+            sc.close();
+
         }
-
-        sc.close();
-
     }
-
 }
