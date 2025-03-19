@@ -1,5 +1,7 @@
 package excetions.model.entities;
 
+import excetions.model.excepetions.DomainExcepetion;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Timer;
@@ -17,6 +19,11 @@ public class Reservetion {
     }
 
     public Reservetion(Integer roomNumber, Date checkIn, Date checkOut) {
+
+        if (!checkOut.after(checkIn)) {
+            throw new DomainExcepetion("Check-out date must be after check-in date");
+        }
+
         this.roomNumber = roomNumber;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
@@ -40,24 +47,21 @@ public class Reservetion {
 
     public long duration () {
         long diff = checkOut.getTime() - checkIn.getTime();
-        return TimeUnit.DAYS.convert(diff, TimeUnit.MICROSECONDS);
+        return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
 
-    public String updateDates(Date checkIn, Date checkOut) {
+    public void updateDates(Date checkIn, Date checkOut) {
 
         Date now = new Date();
         if (checkIn.before(now) || checkOut.before(now)) {
-            return "Check-out date for update must be future";
+            throw new DomainExcepetion("Check-out date for update must be future");
         }
         if (!checkOut.after(checkIn)) {
-            return "Check-out date must be after check-in date";
+            throw new DomainExcepetion("Check-out date must be after check-in date");
         }
 
         this.checkIn = checkIn;
         this.checkOut = checkOut;
-
-        return null;
-
     }
 
     @Override
