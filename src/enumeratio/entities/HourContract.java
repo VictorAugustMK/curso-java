@@ -1,4 +1,4 @@
-package enumeratio.application.entities;
+package enumeratio.entities;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package enumeratio.application.entities.enums;
+package enumeratio.entities.enums;
 
 public enum OrderStatus {
 

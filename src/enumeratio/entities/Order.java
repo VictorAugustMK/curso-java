@@ -1,6 +1,6 @@
-package enumeratio.application.entities;
+package enumeratio.entities;
 
-import enumeratio.application.entities.enums.OrderStatus;
+import enumeratio.entities.enums.OrderStatus;
 import java.util.Date;
 
 public class Order {

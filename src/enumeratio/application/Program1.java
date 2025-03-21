@@ -1,9 +1,9 @@
 package enumeratio.application;
 
-import enumeratio.application.entities.Department;
-import enumeratio.application.entities.HourContract;
-import enumeratio.application.entities.Worker;
-import enumeratio.application.entities.enums.WorkerLevel;
+import enumeratio.entities.Department;
+import enumeratio.entities.HourContract;
+import enumeratio.entities.Worker;
+import enumeratio.entities.enums.WorkerLevel;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

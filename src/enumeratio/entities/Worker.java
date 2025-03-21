@@ -1,6 +1,6 @@
-package enumeratio.application.entities;
+package enumeratio.entities;
 
-import enumeratio.application.entities.enums.WorkerLevel;
+import enumeratio.entities.enums.WorkerLevel;
 
 import java.util.ArrayList;
 import java.util.Calendar;

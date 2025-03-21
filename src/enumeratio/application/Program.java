@@ -1,7 +1,7 @@
 package enumeratio.application;
 
-import enumeratio.application.entities.Order;
-import enumeratio.application.entities.enums.OrderStatus;
+import enumeratio.entities.Order;
+import enumeratio.entities.enums.OrderStatus;
 
 import java.util.Date;
 
