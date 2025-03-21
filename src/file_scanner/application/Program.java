@@ -1,28 +1,42 @@
 package file_scanner.application;
 
-import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Program {
 
     public static void main(String[] args) {
 
-        File file = new File("C:\\repo\\curso-java\\src\\file_scanner\\in.txt");
-        Scanner sc = null;
+        String path = "C:\\repo\\curso-java\\src\\file_scanner\\in.txt";
+        FileReader fr = null;
+        BufferedReader br = null;
 
-        try{
-            sc = new Scanner(file);
-            while (sc.hasNextLine()) {
-                System.out.println(sc.nextLine());
+        try {
+            fr = new FileReader(path);
+            br = new BufferedReader(fr);
+
+            String line = br.readLine();
+            while (line != null) {
+                System.out.println(line);
+                line = br.readLine();
             }
-        } catch (IOException e ) {
+
+        } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
         finally {
-            if (sc != null) {
-                sc.close();
+            try {
+                if (br != null) {
+                    br.close();
+                }
+                if (fr != null) {
+                    fr.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
+
     }
 }
