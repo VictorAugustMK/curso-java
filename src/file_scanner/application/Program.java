@@ -11,7 +11,7 @@ public class Program {
         File file = new File("C:\\repo\\curso-java\\src\\file_scanner\\in.txt");
         Scanner sc = null;
 
-        try {
+        try{
             sc = new Scanner(file);
             while (sc.hasNextLine()) {
                 System.out.println(sc.nextLine());
