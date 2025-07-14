@@ -27,13 +27,13 @@ Uma IDE como IntelliJ IDEA, Eclipse ou VS Code configurada
 🚀 Como usar este repositório
 
 Clone o repositório:
-
+```
 git clone https://github.com/VictorAugustMK/curso-java.git
-
+```
 Navegue até a pasta do projeto:
-
+```
 cd curso-java
-
+```
 Siga as instruções do material disponível em cada módulo.
 
 📚 Material de Apoio
